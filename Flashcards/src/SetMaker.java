@@ -9,28 +9,37 @@ public class SetMaker
 		public static void createNewSet(String setName)
 			{
 
-				// TODO create file
-				File setFile = new File(setName+"Data.txt");
+				// create file
+				createFile(setName);
+
+				// TODO fill file with data
+
+			}
+
+		public static void createFile(String setName)
+			{
+
+				File setFile = new File(setName + "Data.txt");
 
 				try
 					{
 						if (setFile.createNewFile())
 							{
-								System.out.println("Created new set, '" + setName +"'.");
+								System.out.println("Created new set, '" + setName + "'.");
 								writeNewDataIndex(setName);
-							}else{
-								System.out.println("Set '"+setName+"' already exists.");
+							}
+						else
+							{
+								System.out.println("Set '" + setName + "' already exists.");
 							}
 					} catch (IOException e)
 					{
-						
+
 						e.printStackTrace();
 					}
-				
-				
-				// TODO fill file with data
 
 			}
+		//hello
 
 		public static void writeNewDataIndex(String topicName)
 			{
@@ -63,4 +72,9 @@ public class SetMaker
 
 			}
 
+		public static void writeFlashcard(String question, String answer){
+			
+			
+		}
+		
 	}
