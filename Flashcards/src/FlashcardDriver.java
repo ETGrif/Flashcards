@@ -32,32 +32,40 @@ public class FlashcardDriver
 				
 				
 				
-				//TODO ask to either study a set or make a new one
+				// TODO ask to either study a set or make a new one
 				ArrayList<Flashcard> set = new ArrayList<Flashcard>();
-				
-				
+
 				System.out.println("Would you like to study a set, or make a new one?\n"
 						+ "Type the number of the set, or 0 if you'd like to create a new one.");
 				Scanner userInt = new Scanner(System.in);
+				Scanner userString = new Scanner(System.in);
 				boolean givingResponse = true;
-				while(givingResponse){
-					int response = userInt.nextInt();
-					
-					if(response >=0 && response <= setNames.size()){
-						if(response==0){
-							//TODO create new set
-						}else{
-							set = loadChosenSet(response-1);
-						}
-						givingResponse = false;
-						
-					}else{
-						System.out.println("That's am invalid response.");
+				while (givingResponse)
+					{
+						int response = userInt.nextInt();
+
+						if (response >= 0 && response <= setNames.size())
+							{
+								if (response == 0)
+									{
+										//create new set
+										System.out.println("What will you call your new set?");
+										String setName = userString.nextLine();
+										SetMaker.createNewSet(setName);
+									} else
+									{
+										set = loadChosenSet(response - 1);
+									}
+								givingResponse = false;
+
+							} else
+							{
+								System.out.println("That's am invalid response.");
+							}
+						userInt.close();
+						userString.close();
+
 					}
-					
-					
-					
-				}
 				
 				
 	

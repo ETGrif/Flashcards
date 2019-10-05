@@ -1,2 +1,6 @@
 Trivia
 TriviaData.txt
+Colors in Spanish
+Colors in SpanishData.txt
+Test
+TestData.txt
